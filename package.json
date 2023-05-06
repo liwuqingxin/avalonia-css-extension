@@ -1,0 +1,25 @@
+{
+  "name": "avalonia-css-extension",
+  "displayName": "avalonia-css-extension",
+  "description": "Extension for nlnet.avalonia.css language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "acss",
+      "aliases": ["acss", "acss"],
+      "extensions": [".acss"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "acss",
+      "scopeName": "source.acss",
+      "path": "./syntaxes/acss.tmLanguage.json"
+    }]
+  }
+}
