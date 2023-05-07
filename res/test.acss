@@ -1,0 +1,190 @@
+/* All generic definitions. */
+
+comment.line.double-slash.acss
+comment.line.double-dash.acss
+comment.line.number-sign.acss
+comment.line.percentage.acss
+comment.block.acss
+comment.block.documentation.acss
+constant.acss
+constant.numeric.acss
+constant.character.acss
+constant.language.acss
+constant.other.acss
+entity.acss
+entity.name.function.acss
+entity.name.type.acss
+entity.name.tag.acss
+entity.name.section.acss
+entity.other.inherited-class.acss
+entity.other.attribute-name.acss
+invalid.acss
+invalid.illegal.acss
+invalid.deprecated.acss
+keyword.acss
+keyword.control.acss
+keyword.operator.acss
+keyword.other.acss
+markup.acss
+markup.underline.acss
+markup.underline.link.acss
+markup.bold.acss
+markup.heading.acss
+markup.italic.acss
+markup.list.acss
+markup.list.numbered.acss
+markup.list.unnumbered.acss
+markup.quote.acss
+markup.raw.acss
+markup.other.acss
+meta.acss
+meta.function.acss
+meta.storage.type.acss
+meta.entity.name.function.acss
+meta.variable.parameter.acss
+storage.type.acss
+storage.modifier.acss
+string.quoted.acss
+string.quoted.single.acss
+string.quoted.double.acss
+string.quoted.triple.acss
+string.quoted.other.acss
+string.unquoted.acss
+string.interpolated.acss
+string.regexp.acss
+string.other.acss
+support.acss
+support.function.acss
+support.class.acss
+support.type.acss
+support.constant.acss
+support.variable.acss
+support.other.acss
+variable.acss
+variable.parameter.acss
+variable.language.acss
+variable.other.acss
+
+
+
+
+var(a,b);
+brush(a,b);
+color(a,b);
+double(a,b);
+int(a,b);
+thickness(a,b);
+radius(a,b);
+
+/* Selector Property */
+Button[Property=Value]
+Button[Background=#fff]
+Button[Height=22]
+Button[VerticalAlignment=Center]
+Button[(Grid.Row)=12]
+
+/* Selector Class */
+Button:pointerover{}
+Button.Accent{}
+Button.Accent:pointerover{}
+Button.Accent:not(:pointerover){}
+Button.Accent.FirstLine:not(:pointerover) > :is(Border){}
+Button:nth-child(2n+3):nth-last-child(2n+3){}
+
+/* Selector Template & Name*/
+Button:pointerover /template/ Border#PART_Border{}
+
+/* Selector Child */
+Button > Border{}
+
+/* Selector Descendant */
+Button Border{}
+
+/* Selector Or */
+Button,CheckBox, ToggleButton{}
+
+/* Complete Selector Sample */
+Button[(Grid.Row)=1][Content=2].Accent:not(.h1):nth-child(2n+3):nth-last-child(2n+3):pointerover /template/ :is(Border)#PART_Border > Button Border, Button
+
+/* Invalid Strings */
+>>> /deep/ 
+
+/* Operators */
+> + ~ = [] () {} [[ ]]
+
+/* Complete Style Definition */
+ComboBoxItem[(Grid.Row)=1][Content=2]:pointerover /template/ Border#PART_Border {
+    Background:#F9FAFA;
+    CornerRadius: 4;
+    Padding: 8,4,8,5;
+    Foreground: #333;
+    HorizontalContentAlignment: Stretch;
+    VerticalContentAlignment: Stretch;
+    HorizontalAlignment: Stretch;
+    VerticalAlignment: Stretch;
+    backgroud:a;
+
+    [[
+        ComboBoxItem:pointerover,ComboBoxItem:selected
+        {
+            Background: #F2F2F3;
+        }
+        ComboBoxItem:pressed{
+            Background: #F5F5F7;
+        }
+        ComboBoxItem /template/ Border#PART_Indicator > Border[Property=A] {
+            Background:var(Accent);
+            HorizontalAlignment:Left;
+            Height:12.2;
+            Width:3;
+            CornerRadius:2;
+        }
+        
+        [[
+            ComboBoxItem:pointerover,ComboBoxItem:selected
+            {
+                Background: #F2F2F3;
+            }
+            ComboBoxItem:pressed{
+                Background: #F5F5F7;
+            }
+            ComboBoxItem /template/ Border#PART_Indicator > Border[Property=A] {
+                Background:var(Accent);
+                HorizontalAlignment:Left;
+                Height:12.2;
+                Width:3;
+                CornerRadius:2;
+            }
+        ]]
+    ]]
+}
+ComboBox {
+    Background: #FEFEFE;
+    CornerRadius: 4;
+    BorderThickness: 1;
+    BorderBrush:#2222;
+    Padding: 8,4,8,5;
+    Foreground: #333;
+    HorizontalContentAlignment: Stretch;
+    VerticalContentAlignment: Stretch;
+    HorizontalAlignment: Center;
+    VerticalAlignment: Center;
+    MinWidth:40;
+    SelectionBrush:var(Accent06);
+
+    [[
+        ComboBox:pointerover{
+            Background:#F9F9F9;
+        }
+        ComboBox /template/ Popup#PART_Popup{
+            VerticalOffset: 3;
+        }
+        ComboBox /template/ Border#PopupBorder{
+            BorderThickness: 1;
+            BorderBrush:#2222;
+            Background:#FAFAFA;
+            CornerRadius: 4;
+            Padding:4;
+        }        
+    ]]
+}
