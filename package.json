@@ -3,6 +3,7 @@
   "displayName": "avalonia-css-extension",
   "description": "Extension for nlnet.avalonia.css language.",
   "version": "0.0.1",
+  "publisher": "nlnet",
   "engines": {
     "vscode": "^1.78.0"
   },

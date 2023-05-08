@@ -6,4 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+- Add semantic highlight and semantic code hints.
+
+## [1.0.0] - 2023-05-08
+
+### Add
+
+- Add basic acss language syntax highlight support.
